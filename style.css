@@ -1,0 +1,769 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 480px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%; /* Garante 100% da largura */
+}
+
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Centraliza */
+    flex: 1; /* Para ocupar o espaço disponível */
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.header {
+    width: 100%; /* Garante que ocupe toda a largura */
+    background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px 25px 0 0;
+}
+
+.header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.logo-section {
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.logo-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 16px;
+    background: #f9fafb;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #374151;
+    margin: 20px 0 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.login-form {
+    padding: 0 30px 30px;
+    background: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #374151;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #f9fafb;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3182ce;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.btn-login {
+    width: 100%;
+    background: linear-gradient(135deg, #2c5282 0%, #013c6d 100%);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    color: #3182ce;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    z-index: 1000;
+    display: flex;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    padding: 15px 5px;
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 60px;
+}
+
+.nav-item.active {
+    background: rgba(49, 130, 206, 0.1);
+}
+
+.nav-item:hover {
+    background: rgba(49, 130, 206, 0.05);
+}
+
+.nav-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.nav-item span {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.nav-item.active span {
+    color: #3182ce;
+    font-weight: 600;
+}
+
+.footer {
+    position: fixed; /* Fixa na tela */
+    bottom: 0px; /* Posiciona acima do bottom-nav */
+    left: 0; /* Garante que comece no canto esquerdo */
+    width: 100%; /* Largura total da tela */
+    height: 30px;
+    background-color: #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #4a5568;
+    border-top: 1px solid #cbd5e0;
+    box-sizing: border-box;
+    padding: 0 20px; /* Adiciona padding interno */
+    z-index: 999; /* Garante que fique acima de outros elementos */
+}
+
+.footer-left {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1; /* Ocupa espaço disponível */
+}
+
+.footer-right {
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0; /* Não encolhe */
+}
+}
+
+
+/* Tablet */
+@media (min-width: 431px) and (max-width: 900px) {
+
+}
+
+/* Laptop */
+@media (min-width: 901px) and (max-width: 1440px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+       font-family: Roboto, sans-serif;
+       background-color: #f8fafc;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+       padding: 10px;
+       width: 100%; /* Garante 100% da largura */
+   }
+   
+   
+   .logo {
+       width: 120px;
+       height: 120px;
+   }
+   
+   .container {
+       width: 99%;
+       margin: 0 auto; /* Centraliza */
+       flex: 1; /* Para ocupar o espaço disponível */
+   }
+   
+   .login-card {
+       background: #ffffff;
+       border-radius: 25px;
+       padding: 0;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+       overflow: hidden;
+       margin-bottom: 20px;
+   }
+   
+   .header {
+       width: 100%; /* Garante que ocupe toda a largura */
+       background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+       padding: 20px;
+       text-align: center;
+       border-radius: 25px 25px 0 0;
+   }
+   
+   .header h1 {
+       color: white;
+       font-size: 24px;
+       font-weight: 600;
+       margin: 0;
+   }
+   
+   .logo-section {
+       padding: 40px 20px 20px;
+       text-align: center;
+   }
+   
+   .logo-placeholder {
+       width: 100px;
+       height: 100px;
+       border: 2px solid #d1d5db;
+       border-radius: 8px;
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       color: #6b7280;
+       font-size: 16px;
+       background: #f9fafb;
+   }
+   
+   .main-title {
+       text-align: center;
+       font-size: 32px;
+       font-weight: 700;
+       color: #374151;
+       margin: 20px 0 5px;
+   }
+   
+   .subtitle {
+       text-align: center;
+       color: #9ca3af;
+       font-size: 16px;
+       margin-bottom: 40px;
+   }
+   
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px 30px;
+    background: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 50%;
+}
+
+.labelgroup{
+    margin-left: 100px;
+    width: 200px;
+    text-align: left;
+}
+
+.form-group label {
+    color: #374151;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+}   
+
+.form-group input {  
+    width: 80%;
+    max-width: 400px;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #f9fafb;
+    color: #374151;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3182ce;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.btn-login {
+    width: 80%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #2c5282 0%, #013c6d 100%);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+    display: block;
+}
+   .btn-login:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
+   }
+   .btn-login:active {
+       transform: translateY(0);
+   }
+   
+   .forgot-password {
+       display: block;
+       text-align: center;
+       color: #3182ce;
+       text-decoration: none;
+       font-size: 16px;
+       font-weight: 500;
+   }
+   
+   .forgot-password:hover {
+       text-decoration: underline;
+   }
+   
+   .bottom-nav {
+       position: fixed;
+       bottom: 0;
+       left: 0;
+       width: 100%; /* Ocupa toda a largura da tela */
+       z-index: 1000;
+       display: flex;
+       background: white;
+       border-radius: 20px 20px 0 0;
+       padding: 15px 5px;
+       box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+       justify-content: space-around;
+       align-items: center;
+   }
+   
+   
+   .nav-item {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 8px 12px;
+       border-radius: 12px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       min-width: 60px;
+   }
+   
+   .nav-item.active {
+       background: rgba(49, 130, 206, 0.1);
+   }
+   
+   .nav-item:hover {
+       background: rgba(49, 130, 206, 0.05);
+   }
+   
+   .nav-icon {
+       font-size: 20px;
+       margin-bottom: 4px;
+   }
+   
+   .nav-item span {
+       font-size: 12px;
+       color: #6b7280;
+       font-weight: 500;
+   }
+   
+   .nav-item.active span {
+       color: #3182ce;
+       font-weight: 600;
+   }
+   
+   .footer {
+       bottom: 0px; /* Posiciona acima do bottom-nav */
+       left: 0; /* Garante que comece no canto esquerdo */
+       width: 100%; /* Largura total da tela */
+       height: 70px;
+       background-color: #e2e8f0;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       font-size: 12px;
+       color: #4a5568;
+       border-top: 1px solid #cbd5e0;
+       box-sizing: border-box;
+       padding: 0 20px; /* Adiciona padding interno */
+       z-index: 999; /* Garante que fique acima de outros elementos */
+   }
+   
+   .footer-left {
+       font-size: 10px;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       flex: 1; /* Ocupa espaço disponível */
+   }
+   
+   .footer-right {
+       font-weight: bold;
+       font-size: 12px;
+       flex-shrink: 0; /* Não encolhe */
+   }
+}
+
+/* Desktop */
+@media (min-width: 1441px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+       font-family: Roboto, sans-serif;
+       background-color: #f8fafc;
+       min-height: 100vh;
+       display: flex;
+       flex-direction: column;
+       padding: 10px;
+       width: 100%; /* Garante 100% da largura */
+   }
+   
+   
+   .logo {
+       width: 120px;
+       height: 120px;
+   }
+   
+   .container {
+       width: 99%;
+       margin: 0 auto; /* Centraliza */
+       flex: 1; /* Para ocupar o espaço disponível */
+   }
+   
+   .login-card {
+       background: #ffffff;
+       border-radius: 25px;
+       padding: 0;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+       overflow: hidden;
+       margin-bottom: 20px;
+   }
+   
+   .header {
+       width: 100%; /* Garante que ocupe toda a largura */
+       background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+       padding: 20px;
+       text-align: center;
+       border-radius: 25px 25px 0 0;
+   }
+   
+   .header h1 {
+       color: white;
+       font-size: 24px;
+       font-weight: 600;
+       margin: 0;
+   }
+   
+   .logo-section {
+       padding: 40px 20px 20px;
+       text-align: center;
+   }
+   
+   .logo-placeholder {
+       width: 100px;
+       height: 100px;
+       border: 2px solid #d1d5db;
+       border-radius: 8px;
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       color: #6b7280;
+       font-size: 16px;
+       background: #f9fafb;
+   }
+   
+   .main-title {
+       text-align: center;
+       font-size: 32px;
+       font-weight: 700;
+       color: #374151;
+       margin: 20px 0 5px;
+   }
+   
+   .subtitle {
+       text-align: center;
+       color: #9ca3af;
+       font-size: 16px;
+       margin-bottom: 40px;
+   }
+   
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px 30px;
+    background: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    width: 50%;
+}
+
+.labelgroup{
+    margin-left: 100px;
+    width: 200px;
+    text-align: left;
+}
+
+.form-group label {
+    color: #374151;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-align: center;
+}   
+
+.form-group input {  
+    width: 80%;
+    max-width: 400px;
+    padding: 16px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #f9fafb;
+    color: #374151;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3182ce;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.btn-login {
+    width: 80%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #2c5282 0%, #013c6d 100%);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+    display: block;
+}
+   .btn-login:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
+   }
+   .btn-login:active {
+       transform: translateY(0);
+   }
+   
+   .forgot-password {
+       display: block;
+       text-align: center;
+       color: #3182ce;
+       text-decoration: none;
+       font-size: 16px;
+       font-weight: 500;
+   }
+   
+   .forgot-password:hover {
+       text-decoration: underline;
+   }
+   
+   .bottom-nav {
+       position: fixed;
+       bottom: 0;
+       left: 0;
+       width: 100%; /* Ocupa toda a largura da tela */
+       z-index: 1000;
+       display: flex;
+       background: white;
+       border-radius: 20px 20px 0 0;
+       padding: 15px 5px;
+       box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+       justify-content: space-around;
+       align-items: center;
+   }
+   
+   
+   .nav-item {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       padding: 8px 12px;
+       border-radius: 12px;
+       cursor: pointer;
+       transition: all 0.3s ease;
+       min-width: 60px;
+   }
+   
+   .nav-item.active {
+       background: rgba(49, 130, 206, 0.1);
+   }
+   
+   .nav-item:hover {
+       background: rgba(49, 130, 206, 0.05);
+   }
+   
+   .nav-icon {
+       font-size: 20px;
+       margin-bottom: 4px;
+   }
+   
+   .nav-item span {
+       font-size: 12px;
+       color: #6b7280;
+       font-weight: 500;
+   }
+   
+   .nav-item.active span {
+       color: #3182ce;
+       font-weight: 600;
+   }
+   
+   .footer {
+       bottom: 0px; /* Posiciona acima do bottom-nav */
+       left: 0; /* Garante que comece no canto esquerdo */
+       width: 100%; /* Largura total da tela */
+       height: 70px;
+       background-color: #e2e8f0;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       font-size: 12px;
+       color: #4a5568;
+       border-top: 1px solid #cbd5e0;
+       box-sizing: border-box;
+       padding: 0 20px; /* Adiciona padding interno */
+       z-index: 999; /* Garante que fique acima de outros elementos */
+   }
+   
+   .footer-left {
+       font-size: 10px;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       flex: 1; /* Ocupa espaço disponível */
+   }
+   
+   .footer-right {
+       font-weight: bold;
+       font-size: 12px;
+       flex-shrink: 0; /* Não encolhe */
+   }
+}
